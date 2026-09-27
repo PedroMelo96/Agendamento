@@ -1,0 +1,38 @@
+﻿@model Agendamento.Models.Paciente
+@{
+    ViewData["Title"] = "Inserir Paciente";
+}
+
+<h4>Paciente</h4>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Inserir">
+            <div class="mb-3">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control"/>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Cpf" class="control-label"></label>
+                <input asp-for="Cpf" class="form-control" />
+            </div>
+             <div class="mb-3">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Endereco" class="control-label"></label>
+                <input asp-for="Endereco" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="DataNascimento" class="control-label"></label>
+                <input asp-for="DataNascimento" class="form-control" />
+            </div>
+            <div class="mt-3">
+                <input type="submit" value="Inserir" class="btn btn-outline-success" />
+                <a asp-action="Index" class="btn btn-outline-info">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>

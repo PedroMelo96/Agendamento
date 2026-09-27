@@ -1,0 +1,47 @@
+﻿@model List<Agendamento.Models.Paciente>
+
+@{
+    ViewData["Title"] = "Pacientes";
+}
+
+<h1>Pacientes</h1>
+
+<p>
+    <a asp-action="Inserir" class="btn btn-success btn-lg mb-4">Inserir</a>
+</p>
+
+
+<div class="col-md-12">
+    <table class="table align-middle table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>cpf</th>
+                <th>Telefone</th>
+                <th>endreço</th>
+                 <th>data de nascimento</th>
+                <th class="acoes">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var m in Model)
+            {
+                <tr>
+                    <td>@m.Id</td>
+                    <td>@m.Nome</td>
+                    <td>@m.Cpf</td>
+                    <td>@m.Telefone</td>
+                    <td>@m.Endereco</td>
+                    <td>@m.DataNascimento </td>
+
+                    <td class="acoes">
+                        <a asp-action="Detalhar" asp-route-id="@m.Id" class="btn btn-outline-warning">Detalhar</a>
+                        <a asp-action="Editar" asp-route-id="@m.Id" class="btn btn-outline-info">Editar</a>
+                        <a asp-action="Remover" asp-route-id="@m.Id" class="btn btn-outline-danger">Remover</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
